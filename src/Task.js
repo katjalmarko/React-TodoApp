@@ -7,11 +7,11 @@ const Task = (props) => {
     style={{ backgroundColor: props.completed ? "green" : "white" }}
     >
     <h1>{props.taskName}</h1>
-    <button className='first' 
+    <button className='complete' 
     onClick={() => props.completeTask(props.id)}>
       Complete
       </button>
-    <button className='second'
+    <button className='x'
     onClick={() => props.deleteTask(props.id)}>
       X
       </button>

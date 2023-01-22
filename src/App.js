@@ -7,6 +7,7 @@ function App() {
   const [newTask, setNewTask] = useState("")
 
   const handleChange = (event) => {
+    event.preventDefault()
     setNewTask(event.target.value)
   }
 
@@ -36,11 +37,18 @@ function App() {
     )
   }  
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setNewTask("")
+  }
+
   return (
     <div className="App">
       <div className='addTask'>
-        <input onChange={handleChange}/>
+        <form onSubmit={handleSubmit}>
+        <input onChange={handleChange} value ={newTask} />
         <button onClick={addTask}>Add Task</button>
+        </form>
       </div>
 
       <div className='list'>
